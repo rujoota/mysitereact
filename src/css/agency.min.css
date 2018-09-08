@@ -163,6 +163,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
+
 .navbar-custom .navbar-brand.active {
 	color: #fec503;
 }
@@ -193,19 +194,19 @@ fieldset[disabled] .btn-xl.active {
 	color: #fed136;
 	outline: none;
 }
-.navbar-custom .navbar-nav > .active > a {
+.navbar-custom .navbar-nav > .nav-item > a.active {
 	border-radius: 0;
 	color: white;
 	background-color: #fed136;
 }
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
+.navbar-custom .navbar-nav > .nav-item > a:hover,
+.navbar-custom .navbar-nav > .nav-item > a:focus {
 	color: white;
 	background-color: #fec503;
 }
 @media (min-width: 768px) {
 	.navbar-custom {
-		background-color: transparent;
+		/* background-color: transparent; */
 		padding: 25px 0;
 		-webkit-transition: padding 0.3s;
 		-moz-transition: padding 0.3s;
@@ -218,16 +219,14 @@ fieldset[disabled] .btn-xl.active {
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 	}
-	.navbar-custom .navbar-nav > .active > a {
+	.navbar-custom .navbar-nav > .nav-item > a.active {
 		border-radius: 3px;
 	}
-}
-@media (min-width: 768px) {
-	.navbar-custom.affix {
+	.affix.navbar-custom {
 		background-color: #222222;
 		padding: 10px 0;
 	}
-	.navbar-custom.affix .navbar-brand {
+	.affix.navbar-custom .navbar-brand {
 		font-size: 1.5em;
 	}
 }
@@ -850,4 +849,9 @@ hr.small {
 {
 	background-color: #fec503!important;
 	color:white!important;
+}
+.timeline-panel h4 {
+	font-size: 18px;
+	font-weight: 700;
+
 }

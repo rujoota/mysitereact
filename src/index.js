@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import About from './about'
+import './css/bootstrap.min.css'
 import './index.css';
 import './css/agency.min.css';
-import './css/bootstrap.min.css'
 import WebFont from 'webfontloader';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -68,7 +69,7 @@ function MainDOM(props){
         href:"contact",
         title:"contact"
     }]
-    return [<NavigationBar navitems={navItems}/>, <MainHeader />]
+    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />]
 }
 // <NavSubItems navitems={props.navitems} />
 
