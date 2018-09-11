@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './css/agency.min.css';
 import Parser from 'html-react-parser';
 class Projects extends Component {
   constructor(props) {
@@ -29,15 +30,40 @@ class Projects extends Component {
                 </div>
             </div>
             <div className="row">
-            <Project projects={this.state.projs}/>
+            <ProjectBlock projects={this.state.projs}/>
             </div>
         </div>
     </section>
     );
   }
 }
-function Project(props)  {
-    return props.projects.map((proj) => 
+function ProjectDetails(props) {
+    return <div class="portfolio-modal modal fade" id={"portfolioModal"+props.project.order} tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <div id={"project"+props.project.order+"-details"}>
+                                    {Parser(props.project.htmlDetails)}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+function ProjectBlock(props)  {
+    return props.projects.map((proj) => <div>
             <div className="col-md-4 col-sm-6">
                 <a href="" className="portfolio-link" data-toggle="modal" data-target={"#portfolioModal"+proj.order} >
                     <div className="portfolio-hover">
@@ -51,6 +77,6 @@ function Project(props)  {
                     <h4>{proj.name}</h4>
                     <p className="text-muted">{proj.desc}</p>
                 </div>
-        </div>)
+        </div><ProjectDetails project={proj}></ProjectDetails></div>)
   }
 export default Projects;
