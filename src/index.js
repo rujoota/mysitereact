@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import About from './about'
+import Projects from './projects'
 import './css/bootstrap.min.css'
 import './index.css';
 import './css/agency.min.css';
@@ -37,16 +38,16 @@ function NavigationBar(props) {
 }
 function MainHeader(props){
    return <header id="mainheader">
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-lead-in">Hello World!</div>
-                    <div class="intro-heading">It's Nice To Meet You</div>
-                    <a href="https://www.linkedin.com/in/rujoota" class="page-scroll btn btn-primary" target="_blank">
+            <div className="container">
+                <div className="intro-text">
+                    <div className="intro-lead-in">Hello World!</div>
+                    <div className="intro-heading">It's Nice To Meet You</div>
+                    <a href="https://www.linkedin.com/in/rujoota" className="page-scroll btn btn-primary" target="_blank">
                         <img src="./imgs/linkedin.png" width="25" /> My Linkedin
                         </a>
-                    <a href="https://github.com/rujoota" class="page-scroll btn btn-primary" target="_blank">
+                    <a href="https://github.com/rujoota" className="page-scroll btn btn-primary" target="_blank">
                         <img src="./imgs/github.png" width="25" />My Github</a>
-                    <a href="http://rujoota.blogspot.in" class="page-scroll btn btn-primary" target="_blank">
+                    <a href="http://rujoota.blogspot.in" className="page-scroll btn btn-primary" target="_blank">
                         <img src="./imgs/blogspot.png" width="25" />My Blogs</a>
                 </div>
             </div>
@@ -69,7 +70,7 @@ function MainDOM(props){
         href:"contact",
         title:"contact"
     }]
-    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />]
+    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />, <Projects />]
 }
 // <NavSubItems navitems={props.navitems} />
 

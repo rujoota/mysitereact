@@ -92,8 +92,11 @@ class About extends Component {
     ]
   }
   liComponent(arrItem, index) {
+    let cname = null
     if (index % 2 == 0) {
-      return <li className="timeline-inverted">
+      cname = "timeline-inverted"
+    }
+      return <li className={cname}>
         <div className="timeline-image">
           <img className="rounded-circle img-fluid" src={arrItem.img} alt="" />
         </div>
@@ -107,23 +110,6 @@ class About extends Component {
           </div>
         </div>
       </li>
-    }
-    else {
-      return <li>
-        <div className="timeline-image">
-          <img className="rounded-circle img-fluid" src={arrItem.img} alt="" />
-        </div>
-        <div className="timeline-panel">
-          <div className="timeline-heading">
-            <h4>{arrItem.timeline}</h4>
-            <h4 className="subheading">{Parser(arrItem.subheading)}</h4>
-          </div>
-          <div className="timeline-body">
-            {Parser(arrItem.timelineBody)}
-          </div>
-        </div>
-      </li>
-    }
   }
   render() {
     let lis = this.arr.map((arrItem, index) => this.liComponent(arrItem, index))
