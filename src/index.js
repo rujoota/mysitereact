@@ -6,7 +6,8 @@ import './css/bootstrap.min.css'
 import './index.css';
 import './css/agency.min.css';
 import WebFont from 'webfontloader';
-
+import Blog from './blog'
+import Photos from './photos'
 import registerServiceWorker from './registerServiceWorker';
 WebFont.load({
     google: {
@@ -70,7 +71,7 @@ function MainDOM(props){
         href:"contact",
         title:"contact"
     }]
-    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />, <Projects />]
+    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />, <Projects />, <Blog />, <Photos />]
 }
 // <NavSubItems navitems={props.navitems} />
 

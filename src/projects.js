@@ -12,12 +12,6 @@ class Projects extends Component {
     .then(json => this.setState({projs: json}))
   }
   render() {
-    let projectArr = [{
-        name:"abc",
-        img:"",
-        desc:"mydesc",
-        order:1
-    }]
     // console.log("state printing")
     console.log(this.state.projs)
     return (
@@ -30,7 +24,7 @@ class Projects extends Component {
                 </div>
             </div>
             <div className="row">
-            <ProjectBlock projects={this.state.projs}/>
+                <ProjectBlock projects={this.state.projs} />
             </div>
         </div>
     </section>
@@ -63,8 +57,9 @@ function ProjectDetails(props) {
     </div>
 }
 function ProjectBlock(props)  {
-    return props.projects.map((proj) => <div>
-            <div className="col-md-4 col-sm-6">
+    return props.projects.map((proj) => 
+        <div style={{float: 'none', margin: '0 auto'}}>
+            <div className="portfolio-item">
                 <a href="" className="portfolio-link" data-toggle="modal" data-target={"#portfolioModal"+proj.order} >
                     <div className="portfolio-hover">
                         <div className="portfolio-hover-content">
@@ -77,6 +72,8 @@ function ProjectBlock(props)  {
                     <h4>{proj.name}</h4>
                     <p className="text-muted">{proj.desc}</p>
                 </div>
-        </div><ProjectDetails project={proj}></ProjectDetails></div>)
+            </div>
+            <ProjectDetails project={proj}></ProjectDetails>
+        </div>)
   }
 export default Projects;
