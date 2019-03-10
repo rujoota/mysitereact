@@ -9,7 +9,7 @@ class Photos extends Component {
     }
   render() {
     return (
-        <section id="photos" className="bg-light-gray" ng-controller="PhotosCtrl">
+        <section id="photolibrary" className="bg-light-gray">
             <div className="row">
                 <div className="col-lg-12 text-center">
                     <h2 className="section-heading">Flora Photography</h2>

@@ -5,7 +5,7 @@
  */
  body {
     overflow-x: hidden;
-	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
 }
 .text-muted {
 	color: #777777;
@@ -28,11 +28,13 @@ a.active {
 	outline: none;
 }
 .navbar-nav .nav-item a.nav-link{
-	color: #fed136;
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:white;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
 	text-transform: uppercase;
 	font-weight: 400;
 	letter-spacing: 1px;
+	font-size:14px;
+	padding: 10px 15px;
 	/* color: white; */
 }
 a:hover,
@@ -163,7 +165,6 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
-
 .navbar-custom .navbar-brand.active {
 	color: #fec503;
 }
@@ -189,24 +190,25 @@ fieldset[disabled] .btn-xl.active {
 	letter-spacing: 1px;
 	color: white;
 }
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus {
+/* .navbar-custom .nav li a:hover, */
+.navbar-custom .navbar-nav > .nav-item > a:hover {
 	color: #fed136;
 	outline: none;
 }
+.navbar-custom .navbar-nav > .nav-item > a:focus,
 .navbar-custom .navbar-nav > .nav-item > a.active {
 	border-radius: 0;
 	color: white;
 	background-color: #fed136;
 }
-.navbar-custom .navbar-nav > .nav-item > a:hover,
+/* .navbar-custom .navbar-nav > .nav-item > a:hover,
 .navbar-custom .navbar-nav > .nav-item > a:focus {
 	color: white;
 	background-color: #fec503;
-}
+} */
 @media (min-width: 768px) {
 	.navbar-custom {
-		/* background-color: transparent; */
+		background-color: transparent;
 		padding: 25px 0;
 		-webkit-transition: padding 0.3s;
 		-moz-transition: padding 0.3s;
@@ -222,13 +224,16 @@ fieldset[disabled] .btn-xl.active {
 	.navbar-custom .navbar-nav > .nav-item > a.active {
 		border-radius: 3px;
 	}
-	.affix.navbar-custom {
+	.affix {
+		background-color: #222222;
+	}
+	/* .affix.navbar-custom {
 		background-color: #222222;
 		padding: 10px 0;
 	}
 	.affix.navbar-custom .navbar-brand {
 		font-size: 1.5em;
-	}
+	} */
 }
 #mainheader {
 	/*background-image: url('//s3-us-west-2.amazonaws.com/mysite-bucket/imgs/mainBg.jpg');*/

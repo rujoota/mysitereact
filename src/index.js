@@ -9,6 +9,7 @@ import WebFont from 'webfontloader';
 import Blog from './blog'
 import Photos from './photos'
 import registerServiceWorker from './registerServiceWorker';
+import Contact from './contact';
 WebFont.load({
     google: {
       families: ['Montserrat Web:400,700','Kaushan Script', 'Droid Serif:400,700,400italic,700italic', 'Roboto Slab:400,100,300,700']
@@ -71,7 +72,7 @@ function MainDOM(props){
         href:"contact",
         title:"contact"
     }]
-    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />, <Projects />, <Blog />, <Photos />]
+    return [<NavigationBar navitems={navItems}/>, <MainHeader />, <About />, <Projects />, <Blog />, <Photos />, <Contact />]
 }
 // <NavSubItems navitems={props.navitems} />
 
