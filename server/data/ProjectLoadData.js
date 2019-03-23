@@ -1,30 +1,16 @@
 var AWS = require("aws-sdk");
 var fs = require('fs');
-
-AWS.config.update({
-    region: "us-west-2",
-    endpoint: "http://localhost:8000"
-});
-
-var docClient = new AWS.DynamoDB.DocumentClient();
+var path=require('path');
+var projdata = require('./projdata')
+var dynamoStore = require('./dynamoStore')
 
 console.log("Importing data into DynamoDB. Please wait.");
-
-var allProjs = JSON.parse(fs.readFileSync('/Users/rujuraj/Desktop/AngularProjects/MySite/data/projectdata.json', 'utf8'));
-allProjs.forEach(function(proj) {
-    var params = {
-        TableName: "Projects",
-        Item: {
-            "name":  proj.name,
-            "desc": proj.desc
-        }
-    };
-
-    docClient.put(params, function(err, data) {
-        if (err) {
-            console.error("Unable to add ", proj.name, ". Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("PutItem succeeded:", proj.name);
-        }
+function loadProjectData() {
+    // var allProjs = JSON.parse(fs.readFileSync(path.join(__dirname, './projdata.json')));
+    // allProjs=JSON.parse(projdata.data);
+    console.log("inside load project")
+    projdata.data.forEach(function(proj) {
+        dynamoStore.putItem("Projects", proj);
     });
-});
+}
+module.exports.loadProjectData = loadProjectData;

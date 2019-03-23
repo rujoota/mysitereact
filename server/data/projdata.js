@@ -1,59 +1,11 @@
-const express = require('express');
-const path = require('path');
-
-const app = express();
-const port = process.env.PORT || 5000;
-const  ProjectLoadData = require('./data/ProjectLoadData');
-// API calls
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
-
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-
-  // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-}
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
-app.get('/allBlogs',function(req, res){
-        DynamoStore.getAllItems("Blogs",function (err,data) {
-         if (err) {
-            console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
-         }
-         else {
-         // print all the projects
-            console.log("Scan succeeded.Data returned:"+JSON.stringify(data.Items));
-            return res.json(data.Items);
-         }
-    });
-});
-app.get('/loadProject',function(req, res){
-    ProjectLoadData.loadProjectData();
-});
-app.get('/allProjects',function(req, res){
-    // DynamoStore.getAllItems("Projects",function (err,data) {
-    //     if (err) {
-    //         console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
-    //     } else {
-    //         // print all the projects
-    //         console.log("Scan succeeded.Data returned:"+JSON.stringify(data.Items));
-    //         return res.json(data.Items);
-    //     }
-    // });
-    return res.json([
-    {
+data = [
+  {
         "img": "../imgs/projects/website.png",
         "name": "Web Development",
         "order": 3,
         "desc": "5 years of experience as full-stack web developer",
-        "htmlDetails": `<div id="work-details">
-        <div class="modal-header project-center">
+        "htmlDetails": `<div id='work-details'>
+        <div class='modal-header project-center'>
             <h2>Work Experience in Web Development</h2>
         </div>
         <p>
@@ -75,11 +27,11 @@ app.get('/allProjects',function(req, res){
             management to publish company related updates.</p>
     </div>
 
-    <div id="mysite-details">
-        <div class="modal-header project-center">
+    <div id='mysite-details'>
+        <div class='modal-header project-center'>
             <h2>My Portfolio Website</h2>
-            <p class="item-intro text-muted">built in AngularJS</p>
-            <a href="https://github.com/rujoota/MySite" target="_blank">Github Project</a>
+            <p class='item-intro text-muted'>built in AngularJS</p>
+            <a href='https://github.com/rujoota/MySite' target='_blank'>Github Project</a>
         </div>
         <p>Its the current website which you are browsing!</p>
         <p>Its developed using AngularJS, bootstrap, html, javascript, jQuery and node</p>
@@ -88,7 +40,7 @@ app.get('/allProjects',function(req, res){
         <p>In background, it runs basic node server with express which handles basic
             request-response features.</p>
         <p>The site is fully mobile-responsive</p>
-        <p> Checkout the <a href="https://github.com/rujoota/MySite" target="_blank">github
+        <p> Checkout the <a href='https://github.com/rujoota/MySite' target='_blank'>github
             link</a> for this project.</p>
     </div>`
     },
@@ -97,17 +49,17 @@ app.get('/allProjects',function(req, res){
         "order": 2,
         "img": "../imgs/projects/game.png",
         "desc": "Desktop and online multiplayer games with Game Server",
-        "htmlDetails":` <div id="cow-details">
-        <div class="modal-header project-center">
+        "htmlDetails":`<div id='cow-details'>
+        <div class='modal-header project-center'>
             <h2>Cards of Wild</h2>
-            <h3 class="section-subheading text-muted">Multiplayer online card game</h3>
-            <a href="https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild" target="_blank">Github
+            <h3 class='section-subheading text-muted'>Multiplayer online card game</h3>
+            <a href='https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild' target='_blank'>Github
                 Wiki</a>
         </div>
         <br>
-        <div class="project-center embed-responsive embed-responsive-16by9">
-            <iframe width="660" height="415" src="https://www.youtube.com/embed/mrQJwGOfIVo"
-                    frameborder="0" allowfullscreen></iframe>
+        <div class='project-center embed-responsive embed-responsive-16by9'>
+            <iframe width='660' height='415' src='https://www.youtube.com/embed/mrQJwGOfIVo'
+                    frameborder='0' allowfullscreen></iframe>
         </div>
         <br>
         <p>This was a team project with almost 20 people. Mini-teams were created based on each game.
@@ -130,16 +82,16 @@ app.get('/allProjects',function(req, res){
             devices as well.</p>
         <p> Following are relevant links:</p>
         <ul>
-            <li><a href="https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild" target="_blank">Github
+            <li><a href='https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild' target='_blank'>Github
                 wiki </a></li>
 
-            <li><a href="https://github.com/worldofbalance">Github organization</a>
+            <li><a href='https://github.com/worldofbalance'>Github organization</a>
 
             <li>
-                <a href="https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild#game-overview" target="_blank">Rules
+                <a href='https://github.com/worldofbalance/wiki/wiki/15.-Cards-of-Wild#game-overview' target='_blank'>Rules
                     for playing Cards of wild</a></li>
 
-            <li><a href="https://slack-files.com/T0MJR5JMN-F1A84GJ1Z-7e30545b88" target="_blank">Android apk</a>
+            <li><a href='https://slack-files.com/T0MJR5JMN-F1A84GJ1Z-7e30545b88' target='_blank'>Android apk</a>
             </li>
 
         </ul>
@@ -150,12 +102,12 @@ app.get('/allProjects',function(req, res){
         "name": "Mobile App Development",
         "order": 1,
         "desc": "Development experience in both Android and iOS(swift)",
-        "htmlDetails": `<div class="modal-header project-center">
+        "htmlDetails": `<div class='modal-header project-center'>
         <h2>SuperCaly</h2>
-        <p class="item-intro text-muted">iOS smart calendar app</p>
-        <a href="https://bitbucket.org/rujoota/supercalyios/wiki/Home" target="_blank">Bitbucket Project</a>
+        <p class='item-intro text-muted'>iOS smart calendar app</p>
+        <a href='https://bitbucket.org/rujoota/supercalyios/wiki/Home' target='_blank'>Bitbucket Project</a>
     </div>
-    <img class="img-responsive img-centered" src="../imgs/projects/proj_supercaly.png" alt="">
+    <img class='img-responsive img-centered' src='../imgs/projects/proj_supercaly.png' alt=''>
     <p>
         This app is an extension to Google/Apple calendar and makes the regular calendar easy-to-use, intuitive and fun. This app
         is mainly used for analyzing your day-to-day lifecycle and present your daily routine and life-patterns in a way
@@ -176,14 +128,14 @@ app.get('/allProjects',function(req, res){
         "order": 3,
         "desc": "Operating system and network programming in C",
         "htmlDetails": `
-        <div class="modal-header project-center">
+        <div class='modal-header project-center'>
             <h2>Train Operating System(TOS)</h2>
         </div>
         <br>
-        <div class="project-center embed-responsive embed-responsive-16by9">
-            <iframe width="660" height="415"
-                    src="https://www.youtube.com/embed/videoseries?list=PLTtH4ZWJ07JiNLzUTCVZOzULIc4AGdVO-"
-                    frameborder="0" allowfullscreen></iframe>
+        <div class='project-center embed-responsive embed-responsive-16by9'>
+            <iframe width='660' height='415'
+                    src='https://www.youtube.com/embed/videoseries?list=PLTtH4ZWJ07JiNLzUTCVZOzULIc4AGdVO-'
+                    frameborder='0' allowfullscreen></iframe>
         </div>
         <br>
         <p>
@@ -194,8 +146,6 @@ app.get('/allProjects',function(req, res){
             It uses linkedlist as fundamental data structure to manage all operations. OS also
             provides piping methods for inter-process communication.</p>`
     }
-    ]);
-});
-// http.createServer(app).listen(app.get('port'), function () {
-//     console.log('myApp server listening on port ' + app.get('port'));
-// });
+]
+
+exports.data=data;

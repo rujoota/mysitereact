@@ -1,13 +1,13 @@
 const AWS=require('aws-sdk');
-AWS.config.update({region:'us-west-2'});
+AWS.config.update({region:'us-east-1'});
 const dynamodbDocClient=new AWS.DynamoDB.DocumentClient();
 
-function putItem(table,item,callback) {
+function putItem(table,item) {
     var params={
         TableName:table,
         Item:item
     };
-    console.log("Adding a new item...");
+    // console.log("Adding a new item...", params);
     dynamodbDocClient.put(params, function(err, data) {
         if (err) {
             console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));

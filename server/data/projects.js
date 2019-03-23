@@ -2,15 +2,16 @@
 
 //const Project = require('../models/project'),
 const DynamoStore=require('./dynamoStore');
-
+// import loadProjectData from loadProjectData;
 
 //const projects = {};
 
-function initProjects () {
-    //createProject('Proj1', 'proj1 desc');
-    createProject('Proj2', 'proj2 desc');
-    createProject('Proj3', 'proj3 desc');
-}
+// function initProjects () {
+//     //createProject('Proj1', 'proj1 desc');
+//     // createProject('Proj2', 'proj2 desc');
+//     // createProject('Proj3', 'proj3 desc');
+//     loadProjectData();
+// }
 
 var allProjects;
 function getAllProjects () {
