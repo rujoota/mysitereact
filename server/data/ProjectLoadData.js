@@ -1,7 +1,7 @@
 var AWS = require("aws-sdk");
 var fs = require('fs');
 var path=require('path');
-var projdata = require('./projdata')
+var projdata = require('./projectData')
 var dynamoStore = require('./dynamoStore')
 
 console.log("Importing data into DynamoDB. Please wait.");

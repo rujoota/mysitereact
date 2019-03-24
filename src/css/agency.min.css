@@ -64,6 +64,53 @@ h6 {
 .bg-darkest-gray {
 	background-color: #222222;
 }
+.btn-primary {
+	color: white!important;
+	background-color: #fed136 !important;
+	border-color: #fed136!important;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700!important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+	color: white;
+	background-color: #fec503;
+	border-color: #f6bf01;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+	background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+	background-color: #fed136;
+	border-color: #fed136;
+}
+.btn-primary .badge {
+	color: #fed136;
+	background-color: white;
+}
+
+
+
 a.btn-primary {
 	color: white;
 	background-color: #fed136;
@@ -380,9 +427,9 @@ section h3.section-subheading {
 	font-size: 16px;
 	margin: 0;
 }
-#projects * {
+/* #projects * {
 	z-index: 2;
-}
+} */
 @media (min-width: 767px) {
 	#projects .portfolio-item {
 		margin: 0 0 30px;
@@ -674,16 +721,32 @@ ul.social-buttons li a:active {
 .btn:active:focus {
 	outline: none;
 }
-.portfolio-modal .modal-dialog {
+.portfolio-modal {
 	margin: 0;
 	height: 100%;
 	width: auto;
+	font-size: 20px;
 }
-.portfolio-modal .modal-content .project-center
+
+.portfolio-modal .modal-full{
+	min-width: 100%
+}
+
+.portfolio-modal .project-center
 {
 	text-align: center;
 }
-.portfolio-modal .modal-content {
+.portfolio-modal .project-center h2 {
+	/* margin-bottom: 15px; */
+	font-size: 3em;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.portfolio-modal a {
+	color: #fed136;
+}
+.modal-content .portfolio-modal {
 	border-radius: 0;
 	background-clip: border-box;
 	-webkit-box-shadow: none;
@@ -691,30 +754,28 @@ ul.social-buttons li a:active {
 	border: none;
 	min-height: 100%;
 	padding: 100px 0;
-	/*text-align: center;*/
 	text-align: left;
 }
-.portfolio-modal .modal-content h2 {
-	margin-bottom: 15px;
-	font-size: 3em;
-}
-/*.portfolio-modal .modal-content p {
-	margin-bottom: 30px;
-}*/
-.portfolio-modal .modal-content p.item-intro {
-	margin: 20px 0 30px;
+
+.portfolio-modal p.item-intro {
+	/* margin: 20px 0 30px; */
 	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 16px;
+	/* display: block; */
+} 
+.portfolio-modal p {
+	margin-bottom: 30px;
+	font-size: 20px;
 }
-.portfolio-modal .modal-content ul.list-inline {
+.portfolio-modal ul.list-inline {
 	margin-bottom: 30px;
 	margin-top: 0;
 }
-.portfolio-modal .modal-content img {
+.portfolio-modal img {
 	margin-bottom: 30px;
 }
-.portfolio-modal .close-modal {
+.close-modal .portfolio-modal  {
 	position: absolute;
 	width: 75px;
 	height: 75px;
@@ -723,7 +784,17 @@ ul.social-buttons li a:active {
 	right: 25px;
 	cursor: pointer;
 }
-/*.portfolio-modal .next-modal {
+
+.close-modal .portfolio-modal:hover {
+	opacity: 0.3;
+}
+
+.modal-backdrop .portfolio-modal {
+	opacity: 0;
+	display: none;
+}
+
+.next-modal.portfolio-modal  {
 	position: absolute;
 	width: 75px;
 	height: 75px;
@@ -732,20 +803,16 @@ ul.social-buttons li a:active {
 	right: 175px;
 	cursor: pointer;
 	vertical-align: middle;
-}*/
-.portfolio-modal .close-modal:hover {
-	opacity: 0.3;
 }
-.portfolio-modal .close-modal .lr {
+
+/* .portfolio-modal .close-modal .lr {
 	height: 75px;
 	width: 1px;
 	margin-left: 35px;
 	background-color: #222222;
 	transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
-	/* IE 9 */
 	-webkit-transform: rotate(45deg);
-	/* Safari and Chrome */
 	z-index: 1051;
 }
 .portfolio-modal .close-modal .lr .rl {
@@ -754,15 +821,9 @@ ul.social-buttons li a:active {
 	background-color: #222222;
 	transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
-	/* IE 9 */
 	-webkit-transform: rotate(90deg);
-	/* Safari and Chrome */
 	z-index: 1052;
-}
-.portfolio-modal .modal-backdrop {
-	opacity: 0;
-	display: none;
-}
+} */
 ::-moz-selection {
 	text-shadow: none;
 	background: #fed136;
