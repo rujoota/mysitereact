@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const  ProjectLoadData = require('./data/ProjectLoadData');
 const projectData = require('./data/projectData');
+const DynamoStore = require('./data/dynamoStore');
 // API calls
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
@@ -39,7 +40,7 @@ app.get('/loadProject',function(req, res){
 });
 app.get('/allProjects',function(req, res){
     console.log('in allProjects');
-    DynamoStore.getAllItems("Projects",function (err,data) {
+    DynamoStore.getAllItems("Projects", function (err,data) {
         if (err) {
             console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
         } else {
