@@ -5,13 +5,13 @@
     "aws-sdk": "^2.427.0",
     "express": "^4.16.3"
   },
-  "scripts": {
+  "scripts": { 
     "client": "cd .. && yarn start",
     "server": "nodemon server.js",
     "dev:server": "cd .. && yarn build && yarn start",
     "start": "node server.js"
   },
   "devDependencies": {
-    "concurrently": "^3.6.0"
+    "concurrently": "^3.6.0"z
   }
 }
