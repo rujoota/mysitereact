@@ -12,6 +12,6 @@
     "start": "node server.js"
   },
   "devDependencies": {
-    "concurrently": "^3.6.0"z
+    "concurrently": "^3.6.0"
   }
 }
