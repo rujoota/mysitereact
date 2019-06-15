@@ -24,7 +24,7 @@ class Projects extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <ProjectBlock projects={this.state.projs} />
+                        <ProjectBlock projects={this.state.projs} key='project-block'/>
                     </div>
                 </div>
             </section>
@@ -32,11 +32,11 @@ class Projects extends Component {
     }
 }
 function ProjectDetails(props) {
-    return <div class="modal fade portfolio-modal" id={"portfolioModal" + props.project.order} tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    return <div class="modal fade portfolio-modal" id={"portfolioModal" + props.project.order} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog modal-full" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

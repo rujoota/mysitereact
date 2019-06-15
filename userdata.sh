@@ -11,8 +11,6 @@ nvm install 10.15.1
 echo "\n******** Node version ***********"
 node -v
 sudo yum -y install git
-# install bower
-# npm install bower -g
 
 #update host file
 #sudo chmod 777 /etc/hosts
@@ -40,6 +38,7 @@ chmod -R 755 .
 # 	echo "user changed here..."
 # 	cd /home/ec2-user/mysitereact
 echo "********* dir changed *******"
+echo "********* now doing npm install *******"
 #install application
 npm install
 npm install aws-sdk
