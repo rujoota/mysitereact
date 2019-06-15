@@ -48,5 +48,5 @@ cd ..
 echo "********** npm install complete *********"
 #start application
 node server/server.js &
-npm start
+npm start &
 # EOF
