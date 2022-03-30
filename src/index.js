@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 import About from './components/about'
 import Projects from './components/projects'
 import './css/bootstrap.min.css'
@@ -8,7 +11,7 @@ import './css/agency.min.css';
 import WebFont from 'webfontloader';
 import Blog from './components/blog'
 import Photos from './components/photos'
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import Contact from './components/contact';
 WebFont.load({
     google: {
@@ -78,5 +81,14 @@ function MainDOM(props){
 // <NavSubItems navitems={props.navitems} />
 
 const element = <MainDOM key="MainDOM"/>;
-ReactDOM.render(element, document.getElementById('root'));
-registerServiceWorker();
+// ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <MainDOM key="MainDOM"/>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

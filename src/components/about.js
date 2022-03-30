@@ -5,6 +5,18 @@ class About extends Component {
     super()
     this.arr = [{
       subheading: `Software Engineering`,
+      img: "../imgs/about/cgi1.jpg",
+      timeline: "Feb 2019 - Present",
+      timelineBody:
+        `<h4 className="text-muted">
+                        at Amazon, Sunnyvale, California
+                    </h4>
+      <p className="text-muted">
+        Full stack developer in Alexa org
+                      </p>
+                    `
+    }, {
+      subheading: `Software Engineering`,
       img: "../imgs/about/workingwoman.jpg",
       timeline: "Jan 2017 - Present",
       timelineBody:
