@@ -7,28 +7,31 @@ class Projects extends Component {
         this.state = { projs: [] }
     }
     componentDidMount() {
-        fetch('/allProjects')
+        fetch('../data/projects.json')
             .then(response => response.json())
-            .then(json => this.setState({ projs: json }))
+            .then(json => this.setState({ projs: json.projects }))
     }
     render() {
         // console.log("state printing")
         console.log(this.state.projs)
-        return (
-            <section id="projects" className="bg-light-gray">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12 text-center">
-                            <h2 className="section-heading">My Projects</h2>
-                            <h3 className="section-subheading text-muted">Collection of my work</h3>
+        if(this.state.projs) {
+            return (
+                <section id="projects" className="bg-light-gray">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12 text-center">
+                                <h2 className="section-heading">My Projects</h2>
+                                <h3 className="section-subheading text-muted">Collection of my work</h3>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <ProjectBlock projects={this.state.projs} key='project-block'/>
                         </div>
                     </div>
-                    <div className="row">
-                        <ProjectBlock projects={this.state.projs} key='project-block'/>
-                    </div>
-                </div>
-            </section>
-        );
+                </section>
+            );
+        }
+        
     }
 }
 function ProjectDetails(props) {
